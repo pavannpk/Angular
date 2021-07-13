@@ -1,0 +1,140 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <p class="h4">
+        1. Reactive Forms Validation
+      </p>
+      <p class="lead small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, soluta.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p class="h3">We create model here in that we create interface</p>
+      <p class="lead small">
+        in register.ts we have to declare as object register:UserEnroll
+      </p>
+      <p class="lead small">
+        here we have ReactiveFormsModule - FormGroup - FormControl - Formbuilder
+      </p>
+      <p class="lead small">
+        We create Folder validators. We create a class in that we write static method.
+      </p>
+      <p class="lead small">
+        static noSpecialCharacters(conrol: AbstractControl): ValidationErrors | null
+
+      </p>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <!--Empty Error Alert Message-->
+      <div *ngIf="isEmpty" class="alert alert-danger animated zoomIn">
+        <button class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button>
+        <span class="font-weight-bold">Please Fill The Form</span>
+      </div>
+      <!--Alert Message For Success-->
+      <div *ngIf="isSubmitted" class="alert alert-success animated zoomIn">
+        <button class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button>
+        <span class="font-weight-bold">{{message}}</span>
+      </div>
+      <div class="card" *ngIf="!isSubmitted">
+        <div class="card-header bg-primary text-white">
+          <p class="h4 text-center">Online Class Enrollments</p>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registrationForm" (submit)="submitRegister()">
+
+            <!--user name-->
+
+            <div class="form-group">
+              <input
+                formControlName="userName"
+                name="name"
+                  type="text" class="form-control" placeholder="Name"
+                  [class.is-invalid]="getUsername()!.touched && getUsername()!.invalid"
+                  [class.is-valid]="getUsername()!.touched && getUsername()!.valid">
+                  <div *ngIf="getUsername()!.touched && getUsername()!.invalid">
+                   <!-- <small class="text-danger" *ngIf="getUsername()!.errors!.required">
+                      Name is required.
+                    </small>-->
+                    <small class="text-danger" *ngIf="getUsername()!.errors!.noSpecialCharacters">
+                     Invalid UserName
+                    </small>
+                  </div>
+                  <small class="text-success" *ngIf="getUsername()!.touched && getUsername()!.valid">
+                    Looks Good
+                  </small>
+            </div>
+
+            <!--email-->
+
+            <div class="form-group">
+              <input
+                formControlName="email"
+                name="email"
+                type="email" class="form-control" placeholder="Email"
+                [class.is-invalid]="getEmail()!.touched && getEmail()!.invalid"
+                [class.is-valid]="getEmail()!.touched && getEmail()!.valid">
+              <div *ngIf="getEmail()!.touched && getEmail()!.invalid">
+                <small class="text-danger" *ngIf="getEmail()!.errors!.required">
+                  Email is required.
+                </small>
+                <small class="text-danger" *ngIf="getEmail()!.errors!.email">
+                  Invalid Email.
+                </small>
+              </div>
+              <small class="text-success" *ngIf="getEmail()!.touched && getEmail()!.valid">
+                Looks Good.
+              </small>
+            </div>
+
+            <!--password-->
+
+            <div class="form-group">
+              <input
+                formControlName="password"
+                name="password"
+                  type="password" class="form-control" placeholder="Password"
+                [class.is-invalid]="getPassword()!.touched && getPassword()!.invalid"
+                [class.is-valid]="getPassword()!.touched && getPassword()!.valid">
+              <div *ngIf="getPassword()!.touched && getPassword()!.invalid">
+                <small class="text-danger" *ngIf="getPassword()!.errors!.noSpecialCharacters">
+                  Invalid Password
+                </small>
+              </div>
+              <small class="text-success" *ngIf="getPassword()!.touched && getPassword()!.valid">
+                Looks Good
+              </small>
+            </div>
+
+            <!--course-->
+
+            <div class="form-group">
+              <select
+                formControlName="course"
+                name="course"
+                  id="" class="form-control"
+                [class.is-invalid]="getCourse()!.touched && getCourse()!.invalid"
+                [class.is-valid]="getCourse()!.touched && getCourse()!.valid">
+                <option value="">Open this select menu</option>
+                <option value="{{course}}" *ngFor="let course of courses">{{course}}</option>
+              </select>
+              <div *ngIf="getCourse()!.touched && getCourse()!.invalid">
+                <small class="text-danger" *ngIf="getCourse()!.errors!.required">
+                  Course is required.
+                </small>
+              </div>
+              <small class="text-success" *ngIf="getCourse()!.touched && getCourse()!.valid">
+                Looks Good.
+              </small>
+              </div>
+            <div>
+              <input type="submit" class=" btn btn-sm btn-primary" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

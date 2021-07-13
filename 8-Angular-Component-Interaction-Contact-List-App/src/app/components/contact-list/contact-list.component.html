@@ -1,0 +1,27 @@
+
+  <table class="table-striped text-center table table-hover table-primary">
+    <thead class="bg-dark text-white">
+    <tr>
+      <th>SNO</th>
+      <th>NAME</th>
+      <th>EMAIL</th>
+      <th>AGE</th>
+      <th>STATE</th>
+      <th>PINCODE</th>
+      <th>PHONE NUMBER</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--<pre>{{childContactInfo | json}}</pre>-->
+    <tr *ngFor="let info of childContactInfo; let id = index" (click)="clickContact(info)">
+      <td>{{id + 1}}</td>
+      <td>{{info.NAME}}</td>
+      <td>{{info.EMAIL}}</td>
+      <td>{{info.AGE}}</td>
+      <td>{{info.ADDRESS.STATE}}</td>
+      <td>{{info.ADDRESS.PINCODE}}</td>
+      <td>{{info.NUMBER}}</td>
+    </tr>
+    </tbody>
+  </table>
+

@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-primary">Welcome to Customer Module</h3>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, assumenda commodi consequuntur cupiditate delectus deleniti doloremque doloribus earum excepturi harum hic impedit in molestiae nisi officia perferendis perspiciatis placeat quasi quibusdam quisquam quos repellendus reprehenderit ut vero voluptas? Alias aperiam dignissimos eveniet impedit iste labore quia, repellat sunt suscipit vero? Aliquid corporis illo ipsam obcaecati placeat porro praesentium repudiandae sunt.</p>
+      <button routerLink="/" class="btn btn-sm btn-primary">Home</button>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <table class="table-hover text-center table table-striped table-light">
+        <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>City</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let InfoCustomerList of customerList">
+          <td>{{InfoCustomerList.id}}</td>
+          <td>
+            <a routerLink="/customers/{{InfoCustomerList.id}}" class="text-danger">{{InfoCustomerList.first_name}} {{InfoCustomerList.last_name}}</a>
+          </td>
+          <td>{{InfoCustomerList.email}}</td>
+          <td>{{InfoCustomerList.gender}}</td>
+          <td>{{InfoCustomerList.city}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

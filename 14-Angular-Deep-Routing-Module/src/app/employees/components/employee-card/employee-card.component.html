@@ -1,0 +1,24 @@
+<div class="card mt-4" *ngIf="employeeSelectedCard">
+  <div class="card-hearder bg-dark">
+    <h4 class="text-center text-white p-2">Hi {{employeeSelectedCard.first_name}}</h4>
+  </div>
+  <div class="card-body">
+    <ul class="list-group text-left">
+      <li class="list-group-item">
+        <span class="font-weight-bold">ID : </span>{{employeeSelectedCard.id}}
+      </li>
+      <li class="list-group-item">
+        <span class="font-weight-bold">NAME : </span>{{employeeSelectedCard.first_name}} {{employeeSelectedCard.last_name}}
+      </li>
+      <li class="list-group-item">
+        <span class="font-weight-bold">EMAIL : </span>{{employeeSelectedCard.email}}
+      </li>
+      <li class="list-group-item">
+        <span class="font-weight-bold">GENDER : </span>{{employeeSelectedCard.gender}}
+      </li>
+      <li class="list-group-item">
+        <span class="font-weight-bold">IP ADRESS : </span>{{employeeSelectedCard.ip_address}}
+      </li>
+    </ul>
+  </div>
+</div>

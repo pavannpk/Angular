@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <h3 class="text-center small mb-3">Two Way Data Binding Automatically</h3>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Change User Name</h3>
+          <h3 class="text-center small">[(ngModel)]</h3>
+        </div>
+        <div class="card-body">
+          <form class="form-group">
+            <!-- name parameter must and name will be our choice -->
+            <input [(ngModel)]="UserName" name="user" type="text" class="form-control" placeholder="UserName">
+            <!--  -->
+            <h4 class="mt-1">{{UserName}}</h4>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

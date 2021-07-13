@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <p class="text-primary h4">Welcome to <span class="font-weight-bold text-danger h3">{{selectedEmployee.first_name}}</span> Details</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque dicta eligendi et ipsum maxime modi nostrum, officia placeat quam reiciendis reprehenderit repudiandae saepe. Facere minima mollitia rerum ut voluptatem!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>{{selectedEmployee.first_name}} {{selectedEmployee.last_name}}</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="font-weight-bold">ID : </span>
+              <span class="badge badge-danger"> {{selectedEmployee.id}}</span>
+
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">NAME : </span>
+              {{selectedEmployee.first_name}} {{selectedEmployee.last_name}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">EMAIL : </span>
+              {{selectedEmployee.email}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">GENDER : </span>
+              {{selectedEmployee.gender}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">IP ADDRESS : </span>
+              {{selectedEmployee.ip_address}}
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <button routerLink="/stocks" class="btn btn-success btn-sm">Back</button>
+          <button routerLink="/" class="btn btn-success btn-sm">Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

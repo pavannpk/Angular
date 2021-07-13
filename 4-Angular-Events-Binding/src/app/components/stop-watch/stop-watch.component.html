@@ -1,0 +1,25 @@
+<!--Stop Watch-->
+<div class="container">
+  <div class="row mt-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-header rgba-stylish-strong">
+          <h4 class="card-title text-center text-white">Stop Watch</h4>
+        </div>
+        <div class="card-body">
+          <h3 class="display-3 text-center">
+            <span>{{leadTime(minutes)}}</span> :
+            <span>{{leadTime(seconds)}}</span> :
+            <span>{{leadTime(milliseconds)}}</span>
+          </h3>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-sm btn-success" (click)="Start()">Start</button>
+          <button class="btn btn-sm btn-danger" (click)="Stop()">Stop</button>
+          <button class="btn btn-sm btn-warning" (click)="Reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

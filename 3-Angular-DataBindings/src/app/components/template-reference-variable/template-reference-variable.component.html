@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h4 class="text-center">TEMPLATE REFERENCE VARIABLE</h4>
+  <p class="text-center small">By using #name we can change the data to be dynamic</p>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="text-center">Birthday Wishes</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-title p-1" #wishes>NPK</p>
+          <h4 class="card-title p-1">Happy Birthday {{greetings}}</h4>
+          <button class="btn btn-sm rgba-blue-grey-strong" (click)="updateText(wishes)">Birthday</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

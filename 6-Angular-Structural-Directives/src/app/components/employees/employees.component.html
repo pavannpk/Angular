@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h4 class="text-center">*ngFor Directive</h4>
+  <h4 class="small text-center">Changing Data Dynamically</h4>
+  <div class="row">
+    <div class="col">
+      <div class="card mt-1" *ngFor="let info of person">
+        <div class="card-body p-0">
+          <ul  class="list-group">
+            <li class="list-group-item">
+              <span class="font-weight-bold">ID</span> : {{info.id}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">Name</span> : {{info.name}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">Age</span> : {{info.age}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">Designation</span> : {{info.designation}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

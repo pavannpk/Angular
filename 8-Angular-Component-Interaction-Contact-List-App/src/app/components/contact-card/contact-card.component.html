@@ -1,0 +1,17 @@
+<div class="card" *ngIf="selectedContactCard">
+  <div class="card-header rgba-light-green-strong">
+    <h4 class="text-white text-center">Contact Card</h4>
+    <h5 class="text-center text-white">Hi {{selectedContactCard.NAME}}</h5>
+  </div>
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">ID -: {{selectedContactCard.SNO}}</li>
+      <li class="list-group-item">NAME -: {{selectedContactCard.NAME}}</li>
+      <li class="list-group-item">AGE -: {{selectedContactCard.EMAIL}}</li>
+      <li class="list-group-item">EMAIL -: {{selectedContactCard.AGE}}</li>
+      <li class="list-group-item">STATE -: {{selectedContactCard.ADDRESS.STATE}}</li>
+      <li class="list-group-item">PINCODE -: {{selectedContactCard.ADDRESS.PINCODE}}</li>
+      <li class="list-group-item">NUMBER -: {{selectedContactCard.NUMBER}}</li>
+    </ul>
+  </div>
+</div>

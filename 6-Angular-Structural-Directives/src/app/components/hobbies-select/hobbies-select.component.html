@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <div class="card mt-2">
+        <div class="card-header bg-info">
+          <h4 class="text-center">Hobbies</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <form>
+                <div class="custom-control custom-checkbox">
+                  <input name="eaing" [(ngModel)]="eating" type="checkbox" class="custom-control-input" id="checkbox1">
+                  <label for="checkbox1" class="custom-control-label">Eating</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input name="coding" [(ngModel)]="coding" type="checkbox" class="custom-control-input" id="checkbox2">
+                  <label for="checkbox2" class="custom-control-label">Coding</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input name="sleeping" [(ngModel)]="sleeping" type="checkbox" class="custom-control-input" id="checkbox3">
+                  <label for="checkbox3" class="custom-control-label">Sleeping</label>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-8">
+              <div class="card animated jello" *ngIf="eating">
+                <div class="card-header">
+                  <h4>Eating</h4>
+                </div>
+                <div class="card-body">
+                  <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur assumenda cum deleniti eius est eveniet harum, hic id ipsum iusto maiores, nulla obcaecati, provident quis rem repellat. Eos, ipsam.</h6>
+                </div>
+              </div>
+              <div class="card mt-3 animated tada" *ngIf="coding">
+                <div class="card-header">
+                  <h4>Coding</h4>
+                </div>
+                <div class="card-body">
+                  <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur assumenda cum deleniti eius est eveniet harum, hic id ipsum iusto maiores, nulla obcaecati, provident quis rem repellat. Eos, ipsam.</h6>
+                </div>
+              </div>
+              <div class="card mt-3 animated jello" *ngIf="sleeping">
+                <div class="card-header">
+                  <h4>Sleeping</h4>
+                </div>
+                <div class="card-body">
+                  <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur assumenda cum deleniti eius est eveniet harum, hic id ipsum iusto maiores, nulla obcaecati, provident quis rem repellat. Eos, ipsam.</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

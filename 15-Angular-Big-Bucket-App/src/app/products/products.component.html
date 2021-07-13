@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <p class="h3 text-success">Products Page</p>
+      <p class="lead small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, perspiciatis.</p>
+    </div>
+  </div>
+  <div class="row" *ngIf="products.length > 0">
+    <div class="col-md-3 mb-3" *ngFor="let product of products">
+      <div class="card" >
+        <div class="card-header text-center">
+          <img [src]="product.image" alt="logo" class="img-fluid" width="150" height="150">
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              NAME : {{product.name}}
+            </li>
+            <li class="list-group-item">
+              INFO : {{product.info}}
+            </li>
+            <li class="list-group-item">
+              PRICE : {{product.price | currency: 'INR'}}
+            </li>
+            <li class="list-group-item">
+              QTY : {{product.qty}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

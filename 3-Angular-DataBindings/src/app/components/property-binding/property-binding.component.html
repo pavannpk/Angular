@@ -1,0 +1,109 @@
+<div class="container mt-5">
+  <h4 class="text-center">PROPERTY BINDING</h4>
+  <p class="text-center small">Property wants to be dynamic</p>
+
+  <!--form-->
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="text-center">Form</h4>
+        </div>
+        <div class="card-body">
+          <form>
+            <!-- input type will be Text -->
+            <input [type]="Name" class="form-control m-1" placeholder="Enter Name">
+            <input [type]="Password" class="form-control m-1" placeholder="Enter Password">
+            <img [src]="dhoni" class="img-fluid m-1" [width]="width">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--img card-->
+  <h4 class="text-center font-weight-bolder mt-4">Pancha Bhoothalu</h4>
+  <div class="row mt-4">
+    <div class="col-md-3 mt-2">
+      <div class="card">
+        <div class="card-header p-0">
+          <img [src]="air" class="img-fluid">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{titles[0]}}</h4>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus eligendi non quas sint. Dolores eaque maxime nesciunt odio possimus quasi vel, voluptatum. Ad dicta dolores itaque minus natus temporibus.
+          </p>
+          <p class="card-text"></p>
+          <button class="btn btn-sm rgba-blue-grey-strong">View</button>
+          <button class="btn btn-sm" [class]="btn">Read More</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mt-2">
+      <div class="card">
+        <div class="card-header p-0">
+          <img [src]="water" class="img-fluid">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{titles[1]}}</h4>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus eligendi non quas sint. Dolores eaque maxime nesciunt odio possimus quasi vel, voluptatum. Ad dicta dolores itaque minus natus temporibus.
+          </p>
+          <p class="card-text"></p>
+          <button class="btn btn-sm rgba-blue-grey-strong">View</button>
+          <button class="btn btn-sm" [class]="btn">Read More</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mt-2">
+      <div class="card">
+        <div class="card-header p-0">
+          <img [src]="fire" class="img-fluid">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{titles[2]}}</h4>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus eligendi non quas sint. Dolores eaque maxime nesciunt odio possimus quasi vel, voluptatum. Ad dicta dolores itaque minus natus temporibus.
+          </p>
+          <p class="card-text"></p>
+          <button class="btn btn-sm rgba-blue-grey-strong">View</button>
+          <button class="btn btn-sm" [class]="btn">Read More</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mt-2">
+      <div class="card">
+        <div class="card-header p-0">
+          <img [src]="earth" class="img-fluid">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{titles[3]}}</h4>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus eligendi non quas sint. Dolores eaque maxime nesciunt odio possimus quasi vel, voluptatum. Ad dicta dolores itaque minus natus temporibus.
+          </p>
+          <p class="card-text"></p>
+          <button class="btn btn-sm rgba-blue-grey-strong">View</button>
+          <button class="btn btn-sm" [class]="btn">Read More</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mt-2">
+      <div class="card">
+        <div class="card-header p-0">
+          <img [src]="sky" class="img-fluid">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{titles[4]}}</h4>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus eligendi non quas sint. Dolores eaque maxime nesciunt odio possimus quasi vel, voluptatum. Ad dicta dolores itaque minus natus temporibus.
+          </p>
+          <p class="card-text"></p>
+          <button class="btn btn-sm rgba-blue-grey-strong">View</button>
+          <button class="btn btn-sm" [class]="btn">Read More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

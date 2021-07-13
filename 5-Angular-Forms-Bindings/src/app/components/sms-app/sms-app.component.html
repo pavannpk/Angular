@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">SMS App</h3>
+        </div>
+        <div class="card-body">
+          <form>
+            <textarea name="text" [(ngModel)]="Text" maxlength="100" rows="4" class="form-control" placeholder="Your Message">
+
+            </textarea>
+          </form>
+        </div>
+        <div class="card-footer">
+          <h3>
+            Characters Remaining : {{Text.length}}
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

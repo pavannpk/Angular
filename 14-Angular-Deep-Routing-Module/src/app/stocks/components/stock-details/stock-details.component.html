@@ -1,0 +1,49 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <p class="text-primary h4">Welcome to <span class="font-weight-bold text-danger h3">{{selectedStock.stock_name}}</span> Details</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque dicta eligendi et ipsum maxime modi nostrum, officia placeat quam reiciendis reprehenderit repudiandae saepe. Facere minima mollitia rerum ut voluptatem!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>{{selectedStock.stock_name}}</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="font-weight-bold">ID : </span>
+              <span class="badge badge-danger"> {{selectedStock.id}}</span>
+
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">STOCK NAME : </span>
+              {{selectedStock.stock_name}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">STOCK INDUSTRY : </span>
+              {{selectedStock.stock_industry}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">STOCK MARKET : </span>
+              {{selectedStock.stock_market}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">STOCK SYMBOL : </span>
+              {{selectedStock.stock_symbol}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">IP SECTOR : </span>
+              {{selectedStock.stock_sector}}
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a routerLink="/stocks" class="btn btn-sm btn-dark-green">Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

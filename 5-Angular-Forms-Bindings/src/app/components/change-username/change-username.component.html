@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <h4 class="text-center">Forms</h4>
+  <h3 class="text-center small mb-3">Two Way Data Binding Manually</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="text-center">Using TRF</h4>
+          <h3 class="text-center small">#user</h3>
+        </div>
+        <div class="card-body">
+          <form class="form-group">
+            <!--here we pass #user is template refernce variable and add to input=change method-->
+            <input #user (input)="change(user)" [type]="name" [class]="form" placeholder="UserName">
+            <!--mannual update or bind the value-->
+            <!--we want input value in username-->
+            <h4 class="mt-1">{{username}}</h4>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="text-center">Own Element</h4>
+          <h3 class="text-center small">$event.target.value</h3>
+        </div>
+        <div class="card-body">
+          <form class="form-group">
+            <!--if you want to access current element or your own tag write like this we no need to TRF-->
+            <!--it showing error TS2339: Property 'value' does not exist on type 'EventTarget'
+                  that's why im adding this $any($event.target) instead of $event.target. -->
+            <input (input)="Own($any($event.target).value)" [type]="name" [class]="form" placeholder="UserName">
+            <!--we want input value in username-->
+            <h4 class="mt-1">{{ownUsername}}</h4>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

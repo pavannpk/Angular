@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <div class="row animated slideInLeft">
+    <div class="col">
+      <p class="h3 text-warning">Upload Events</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque cupiditate, doloremque dolorum eos eveniet exercitationem hic illo iusto magnam maiores molestiae nemo officiis quidem sequi similique vel veritatis vitae.</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, libero?</p>
+      <p class="lead">Available Events : </p>
+    </div>
+  </div>
+  <hr>
+  <div *ngIf="!isAdmin" class="row d-flex justify-content-center mt-4 animated rotateIn delay-1s">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header blue-gradient-rgba">
+          <p class="h5 text-center">Upload Events Here</p>
+        </div>
+        <div class="card-body">
+          <form (submit)="submitUpload()">
+            <div class="form-group">
+              <input name="name"
+                     [(ngModel)]="eventForm.name"
+                     type="text" class="form-control" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+              <input
+                name="image"
+                [(ngModel)]="eventForm.image"
+                type="url" class="form-control" placeholder="Image URL">
+            </div>
+            <div class="form-group">
+              <select
+                name="eventType"
+                [(ngModel)]="eventForm.type"
+                id="" class="form-control" (change)="selectEventType($event)">
+                <option value="">Select Event Type</option>
+                <option value="FREE">FREE</option>
+                <option value="PRO">PRO</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input
+                name="price"
+                [(ngModel)]="eventForm.price"
+                type="number" class="form-control" placeholder="Price" [disabled]="isFree">
+            </div>
+            <div class="form-group">
+              <input
+                name="date"
+                [(ngModel)]="eventForm.date"
+                type="date" class="form-control" placeholder="Event Date">
+            </div>
+            <div class="form-group">
+              <textarea
+                name="info"
+                [(ngModel)]="eventForm.info"
+                rows="3" class="form-control" placeholder="Event Description"></textarea>
+            </div>
+            <div>
+              <input type="submit" class="btn btn-sm btn-secondary" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!isAdmin">
+    <div class="row">
+      <div class="col">
+          <p class="h4">
+            ------------------------------Your are un authorized to upload events------------------------------
+          </p>
+      </div>
+    </div>
+  </div>
+</div>

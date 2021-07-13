@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <hr class="mt-5">
+  <h4 class="text-center">Main Example</h4>
+  <hr class="">
+  <h4 class="text-center">Component Interaction - @Input() @Output @EventEmitter</h4>
+  <div class="row">
+    <div class="col">
+      <div class="card mt-3">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Parent Component - @Input()</h4>
+          <h4 class="text-center small">you can send data [childData] = "parentData"</h4>
+        </div>
+        <div class="card-body">
+          <form>
+            <input name="username" [(ngModel)]="ParentMessage" type="text" class="form-control" placeholder="UserName">
+          </form>
+        </div>
+        <div class="card-footer">
+          <h4 class="mt-3"><span class="font-weight-bold">From Child -:</span> {{fromChild}}</h4>
+        </div>
+        <app-child (sendData)="fromChild=$event" [ChildMessage]="ParentMessage"></app-child>
+      </div>
+
+    </div>
+  </div>
+</div>

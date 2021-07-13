@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    <span class="badge-primary badge mr-3 p-2 rounded">{{githubProfileData.followers}} Followers</span>
+    <span class="badge-success badge mr-3 p-2 rounded">{{githubProfileData.public_repos}} Repos</span>
+    <span class="badge-warning badge mr-3 p-2 rounded">{{githubProfileData.public_gists}} Gists</span>
+    <span class="badge-danger badge mr-3 p-2 rounded">{{githubProfileData.following}} Following</span>
+  </div>
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">
+        User Name : {{githubProfileData.name}}
+      </li>
+      <li class="list-group-item">
+        User ID : {{githubProfileData.login}}
+      </li>
+      <li class="list-group-item">
+        Created : {{githubProfileData.created_at | date}}
+      </li>
+      <li class="list-group-item">
+        Subscriptions : <a [href]="githubProfileData.subscriptions_url" target="_blank">{{githubProfileData.subscriptions_url}}</a>
+      </li>
+      <li class="list-group-item">
+        Followers_Url : <a [href]="githubProfileData.followers_url" target="_blank">{{githubProfileData.followers_url}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

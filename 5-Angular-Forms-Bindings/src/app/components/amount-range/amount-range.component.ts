@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-amount-range',
+  templateUrl: './amount-range.component.html',
+  styleUrls: ['./amount-range.component.css']
+})
+export class AmountRangeComponent implements OnInit {
+
+  public amount:number = 1000;
+  public min:number = 1000;
+  public max:number = 100000;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

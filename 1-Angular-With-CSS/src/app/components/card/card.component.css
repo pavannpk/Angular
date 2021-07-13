@@ -1,0 +1,23 @@
+.c-card{
+  width: 250px;
+  box-shadow: 0 0 10px black;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: sans-serif, Arial;
+  background: linear-gradient(40deg, red, blue);
+}
+
+.c-card-body{
+  padding: 10px;
+}
+.c-btn{
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(50deg, red, blue);
+  outline: none;
+}
+.c-card-sub{
+  color: white;
+  opacity: 60%;
+}

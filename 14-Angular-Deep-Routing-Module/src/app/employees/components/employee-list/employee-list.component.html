@@ -1,0 +1,26 @@
+<div class="row mt-4">
+  <div class="col">
+    <table class="table-hover text-center table table-striped table-light">
+      <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>IP Address</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let InfoEmployeeList of employeeChildList" (click)="selectedEmployee(InfoEmployeeList)">
+        <td>{{InfoEmployeeList.id}}</td>
+        <td>
+          <a class="text-danger">{{InfoEmployeeList.first_name}} {{InfoEmployeeList.last_name}}</a>
+        </td>
+        <td>{{InfoEmployeeList.email}}</td>
+        <td>{{InfoEmployeeList.gender}}</td>
+        <td>{{InfoEmployeeList.ip_address}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

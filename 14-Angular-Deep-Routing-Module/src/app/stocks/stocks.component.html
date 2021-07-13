@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-primary">Welcome to Stocks Module</h3>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, assumenda commodi consequuntur cupiditate delectus deleniti doloremque doloribus earum excepturi harum hic impedit in molestiae nisi officia perferendis perspiciatis placeat quasi quibusdam quisquam quos repellendus reprehenderit ut vero voluptas? Alias aperiam dignissimos eveniet impedit iste labore quia, repellat sunt suscipit vero? Aliquid corporis illo ipsam obcaecati placeat porro praesentium repudiandae sunt.</p>
+      <button routerLink="/" class="btn btn-sm btn-primary">Home</button>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <table class="table-hover text-center table table-striped table-light">
+        <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Stock Name</th>
+          <th>Stock Industry</th>
+          <th>Stock market</th>
+          <th>Stock Symbol</th>
+          <th>Stock Sector</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let InfoStockList of stockList">
+          <td>{{InfoStockList.id}}</td>
+          <td>
+            <a routerLink="/stocks/{{InfoStockList.id}}" class="text-danger">{{InfoStockList.stock_name}}</a>
+          </td>
+          <td>{{InfoStockList.stock_industry}}</td>
+          <td>{{InfoStockList.stock_market}}</td>
+          <td>{{InfoStockList.stock_symbol}}</td>
+          <td>{{InfoStockList.stock_sector}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

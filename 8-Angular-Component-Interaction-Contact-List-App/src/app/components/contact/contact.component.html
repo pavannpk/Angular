@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col mt-4 text-center">
+      <h4 class="text-info font-weight-bold">Parent to child and child to Parent</h4>
+      <p class="small">I Want to send the data from child(Contact-list) to child(Contact-Card). We, Can't send directly.</p>
+      <p class="small">The data comes from Parent(Contact) to Child(Contact-List) and
+                        go back to Parent(Contact) to Child(Contact-Card).</p>
+      <p class="small">Whenever I click on the contact it will show on card</p>
+
+      <hr>
+      <h4>Conctact Componet - Parent</h4>
+      <p class="small">@Input()</p>
+      <p>Both Childs are connected to parent</p>
+      <hr class="w-75">
+      <div class="d-flex justify-content-around">
+        <h4>Contact-list Component - Child </h4>
+        <h4>Contact-Card Component - Child</h4>
+      </div>
+      <p class="small">@Output() @EventEmitter()</p>
+      <p>There is no connection between two childs</p>
+    </div>
+    <!--{{parentContactInfo | json}}-->
+    <!--{{selectedContact.NAME | json}}-->
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <app-contact-list (sendData)="selectedContact=$event" [childContactInfo]="parentContactInfo"></app-contact-list>
+    </div>
+    <div class="col-md-3">
+      <app-contact-card [selectedContactCard]="selectedContact"></app-contact-card>
+    </div>
+  </div>
+</div>

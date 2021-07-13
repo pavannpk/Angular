@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-primary">Welcome to Employees Module</h3>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, assumenda commodi consequuntur cupiditate delectus deleniti doloremque doloribus earum excepturi harum hic impedit in molestiae nisi officia perferendis perspiciatis placeat quasi quibusdam quisquam quos repellendus reprehenderit ut vero voluptas? Alias aperiam dignissimos eveniet impedit iste labore quia, repellat sunt suscipit vero? Aliquid corporis illo ipsam obcaecati placeat porro praesentium repudiandae sunt.</p>
+      <button routerLink="/" class="btn btn-sm btn-primary">Home</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <app-employee-list [employeeChildList]="employeeInfo" (sendData)="selectedEmployeeInfo=$event"></app-employee-list>
+    </div>
+    <div class="col-md-3">
+      <app-employee-card [employeeSelectedCard]="selectedEmployeeInfo"></app-employee-card>
+    </div>
+  </div>
+</div>
+

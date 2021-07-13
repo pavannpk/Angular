@@ -1,0 +1,39 @@
+<script src="../../../../../TypeScript/05_Array & Object/app.ts"></script>
+<nav class="navbar navbar-dark blue-gradient-rgba navbar-expand-sm">
+  <a href="/" class="navbar-brand">Angular Component Interactions</a>
+</nav>
+
+<!--How you can send data
+    [childData] = "parentData"-->
+<div class="container mt-4">
+  <h4 class="text-center">Decorators</h4>
+  <h4 class="text-center small">@Input @Output @EventEmitter</h4>
+  <hr>
+  <h4 class="text-center">From Parent to Child and Child to parent - @Input() @Output @EventEmitter</h4>
+  <h4 class="text-center small">you can send data parent to child<span> [childData] = "parentData" </span></h4>
+  <h4 class="text-center small">you can send data child  to parent<span> (parentData) = "msg=$event" </span></h4>
+  <hr>
+  <h4 class="text-center">Dummy Example</h4>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <div class="card mt-3">
+        <div class="card-header">
+          <h4 class="text-center">I'm From Parent (Parent Component)</h4>
+          <p class="text-center small">@Input</p>
+        </div>
+        <div class="card-body">
+          <pre>{{student | json}}</pre>
+          <p>{{wishMessage}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-student (sendData)="wishMessage=$event" [childStudent]="student"></app-student>
+
+
+<app-parent></app-parent>
+<router-outlet></router-outlet>
+

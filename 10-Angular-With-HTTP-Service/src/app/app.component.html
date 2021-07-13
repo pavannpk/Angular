@@ -1,0 +1,76 @@
+<script src="../../../../../TypeScript/05_Array & Object/app.ts"></script>
+<nav class="navbar navbar-dark blue-gradient-rgba navbar-expand-sm">
+  <a href="/" class="navbar-brand">Angular With HTTP Service</a>
+</nav>
+
+
+<h2 class="mt-4 text-center font-weight-bold">Services</h2>
+<div class="small">
+  <p class="text-center">to share the business logic, data, functions, utility can be shared with multiple components. main use is reduce duplication code.</p>
+  <p class="text-center">Customer-Service is a class of .ts file this contains set of methods that will maintain actual data business logic
+    that will be shared with all.</p>
+  <p class="text-center">If you want some data. you nedd to call method of the service</p>
+  <p class="text-center">In order to call method of service you have to crete object of customer service</p>
+</div>
+<hr>
+<h4 class="mt-4 text-center font-weight-bold">Dependency LookUp</h4>
+<p class="text-center small">Customer-list is dependent on customer-service it provide some data then only customer-list will display</p>
+<hr>
+<h4 class="mt-4 text-center font-weight-bold">Dependency Injunction - Design Pattern in Angular</h4>
+<p class="small text-center">If you are customer-list is dependent on customer-service. You just need to inform to Angular. If you declare
+  customer-service as a dependency. Angular create itself an object of this service inject to customer-list</p>
+<hr>
+<h3 class="text-center font-weight-bold">For HTTP CLient</h3>
+<p class="small text-center">you have to create a service - ng g s service name</p>
+<p class="small text-center"> declare as a provider in app.module.ts - providers: [CustomerService]</p>
+<p class="small text-center">declare dependency on service with components (inside the constructor). </p>
+<p class="small text-center">Constructor is a special method which will executed whenever component is created.</p>
+<p class="small text-center">constructor(private customerService:CustomerService)
+    ngOnInit(): void</p>
+  <p class="small text-center">  this.customerDetails = this.customerService.getDataFromService();</p>
+<hr>
+<h3 class="text-center font-weight-bold">Observables</h3>
+<p class="small text-center"> - it is a sequence of items.that arrives asynchronus over the data, which called raw data.
+  in angula, observable mean a http response which arise from server to our app asynchronously
+  once we recieve the observables, we need to type cast them into the required format as per the incoming responce
+  once we recive the data, which will be available to our components which are subscribed to our service
+  we can make calls using httpClient module from angular
+  steps to fetch the data from a server using httpClient</p>
+<p class="small text-center">which type of data come from the server is observable
+<p class="small text-center">public getAllCustomers():Observable<!--<any[]>--></p>
+
+  <p class="small text-center">you nedd to subsribe then only you get data
+
+  pipe is do asynchronus calls to the url</p>
+<ul class="small text-center list-group">
+  <li class="list-group-item">1. host json file -> github.com/gist</li>
+  <li class="list-group-item"> 2. fetch the data from server</li>
+  <li class="list-group-item">
+    <ul class="list-group">
+      <li class="list-group-item">
+        - httpclientmodule has to be declare in app.module.ts
+      </li>
+      <li class="list-group-item">
+        - create a service and fetch data using httpclient
+      </li>
+      <li class="list-group-item">
+        - fetch the data get req
+      </li>
+    </ul>
+  </li>
+  <li class="list-group-item"> 3. provide data to the components</li>
+  <li class="list-group-item">
+    <ul class="list-group">
+      <li class="list-group-item">
+        - whatever the component subscribed to the service taht will get data
+      </li>
+    </ul>
+  </li>
+  <li class="list-group-item">4. display data on components screen</li>
+  <li class="list-group-item">For handle errors you have to create a function</li>
+</ul>
+
+<app-customer-details></app-customer-details>
+<app-customer-list></app-customer-list>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <h4 class="text-center">EVENT BINDING</h4>
+  <p class="text-center small">By using events we change the data to be dynamic</p>
+
+  <!--Click Event-->
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="text-center">Greetings</h4>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title p-1">{{msg}}</h4>
+            <button class="btn btn-sm rgba-blue-grey-strong" (click)="gdMg()">Good Morning</button>
+            <button class="btn btn-sm purple-gradient-rgba" (click)="gdAn()">Good Afternoon</button>
+            <button class="btn btn-sm rgba-stylish-strong" (click)="gdEn()">Good Evening</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--counter-->
+
+  <div class="row mt-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="text-center">Counter</h4>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title display-1 p-1">{{counting}}</h4>
+            <button class="btn btn-sm btn-success" (click)="start()">Start</button>
+            <button class="btn btn-sm btn-danger" (click)="stop()">Stop</button>
+            <button class="btn btn-sm btn-warning" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <p class="text-primary h4">Welcome to <span class="font-weight-bold text-danger h3">{{selectedCustomer.first_name}}</span> Details</p>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque dicta eligendi et ipsum maxime modi nostrum, officia placeat quam reiciendis reprehenderit repudiandae saepe. Facere minima mollitia rerum ut voluptatem!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>{{selectedCustomer.first_name}} {{selectedCustomer.last_name}}</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="font-weight-bold">ID : </span>
+              <span class="badge badge-danger"> {{selectedCustomer.id}}</span>
+
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">NAME : </span>
+              {{selectedCustomer.first_name}} {{selectedCustomer.last_name}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">EMAIL : </span>
+              {{selectedCustomer.email}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">GENDER : </span>
+              {{selectedCustomer.gender}}
+            </li>
+            <li class="list-group-item">
+              <span class="font-weight-bold">IP ADDRESS : </span>
+              {{selectedCustomer.city}}
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a routerLink="/customers" class="btn btn-sm btn-dark-green">Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

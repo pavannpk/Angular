@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h4 class="text-center">*ngIf Directive</h4>
+  <h4 class="small text-center">Changing Data Dynamically</h4>
+  <div class="row">
+    <div class="col">
+      <div class="card mt-2">
+        <div class="card-header btn-grey">
+          <h4 class="text-center">Login & Register</h4>
+        </div>
+        <div class="card-body" *ngIf="!firstLoad">
+          <h4 *ngIf="isLoggedIn">Welcome to NPK Page</h4>
+          <h4 *ngIf="!isLoggedIn">Thanks for visiting our Page</h4>
+          <p class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque earum eligendi itaque labore magnam mollitia nulla praesentium quibusdam vel. Blanditiis iure perspiciatis ratione reprehenderit veritatis! A aut doloremque quis reiciendis.</p>
+        </div>
+        <div class="card-footer">
+          <button *ngIf="!isLoggedIn" (click)="logIn()" class="btn btn-sm btn-success">Login</button>
+          <button *ngIf="isLoggedIn" (click)="logOut()" class="btn btn-sm btn-warning">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

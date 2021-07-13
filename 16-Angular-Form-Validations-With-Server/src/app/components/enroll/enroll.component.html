@@ -1,0 +1,113 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <p class="h4">
+        1. Template Driven Form - Enroll
+      </p>
+      <p class="lead small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, soluta.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p class="h3">We create model here in that we create interface</p>
+      <p class="lead small">
+      in enroll.ts we have to declare as object user:UserEnroll
+    </p>
+      <p class="lead small">
+        here we have FormsModule - ngForm - ngModel
+      </p>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <!--Empty Error Alert Message-->
+      <div *ngIf="isEmpty" class="alert alert-danger bg-danger animated zoomIn">
+        <button class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button>
+        <span class="font-weight-bold red-text">Please Fill The Form</span>
+      </div>
+      <!--Alert Message For Success-->
+      <div *ngIf="isSubmitted" class="alert alert-success animated zoomIn">
+        <button class="close" data-dismiss="alert"><i class="fa fa-times-circle"></i></button>
+        <span class="font-weight-bold">{{message}}</span>
+      </div>
+      <div class="card" *ngIf="!isSubmitted">
+        <div class="card-header bg-primary text-white">
+          <p class="h4 text-center">Online Class Enrollments</p>
+        </div>
+        <div class="card-body">
+          <form #enrollmentForm="ngForm" (submit)="submitEnroll()">
+            <div class="form-group">
+                <input
+                    #userName="ngModel"
+                    name="name"
+                    [(ngModel)]="user.name"
+                    type="text" class="form-control" placeholder="Name"
+                    [class.is-invalid]="userName.touched && userName.invalid"
+                    [class.is-valid]="userName.touched && userName.valid"
+                    required pattern="[a-zA-Z0-9]+">
+              <div *ngIf="userName.touched && userName.invalid">
+                <small class="text-danger" *ngIf="userName.errors!.required">UserName is required</small>
+                <small class="text-danger" *ngIf="userName.errors!.pattern">No Special Characters</small>
+              </div>
+              <small class="text-success" *ngIf="userName.touched && userName.valid">Looks Good</small>
+            </div>
+            <div class="form-group">
+                <input
+                  type="email"
+                  #userEmail="ngModel"
+                  name="email"
+                  [(ngModel)]="user.email"
+                  type="email" class="form-control" placeholder="Email"
+                  [class.is-valid]="userEmail.touched && userEmail.valid"
+                  [class.is-invalid]="userEmail.touched && userEmail.invalid"
+                  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+              <div *ngIf="userEmail.touched && userEmail.invalid">
+                <small class="text-danger" *ngIf="userEmail.errors!.required">Eamil is required</small>
+                <small class="text-danger" *ngIf="userEmail.errors!.pattern">No Special Characters</small>
+              </div>
+              <small class="text-success" *ngIf="userEmail.touched && userEmail.valid">Looks Good</small>
+
+            </div>
+            <div class="form-group">
+                <input
+                  #userPassword="ngModel"
+                  name="password"
+                  [(ngModel)]="user.password"
+                  type="password" class="form-control" placeholder="Password"
+                  [class.is-invalid]="userPassword.touched && userPassword.invalid"
+                  [class.is-valid]="userPassword.touched && userPassword.valid"
+                  required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$">
+              <div *ngIf="userPassword.touched && userPassword.invalid">
+                <small class="text-danger" *ngIf="userPassword.errors!.required">Password is required</small>
+                <small class="text-danger" *ngIf="userPassword.errors!.pattern">Invalid Password</small>
+              </div>
+              <small class="text-success" *ngIf="userPassword.touched && userPassword.valid">Looks Good</small>
+
+            </div>
+            <div class="form-group">
+              <select
+                #userCourse="ngModel"
+                name="course"
+                [(ngModel)]="user.course"
+                id="" class="form-control"
+                [class.is-invalid]="userCourse.touched && userCourse.invalid"
+                [class.is-valid]="userCourse.touched && userCourse.valid"
+                required>
+                <option value="">Open this select menu</option>
+                <option value="{{course}}" *ngFor="let course of courses">{{course}}</option>
+              </select>
+              <div *ngIf="userCourse.touched && userCourse.invalid">
+                <small class="text-danger" *ngIf="userCourse.errors!.required">Corse is  Required</small>
+              </div>
+              <small class="text-success" *ngIf="userCourse.touched && userCourse.valid">Looks Good</small>
+            </div>
+            <div>
+              <input type="submit" class=" btn btn-sm btn-primary" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

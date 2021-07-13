@@ -1,0 +1,26 @@
+<script src="../../../../../TypeScript/05_Array & Object/app.ts"></script>
+<nav class="navbar navbar-dark blue-gradient-rgba navbar-expand-sm">
+  <a href="/" class="navbar-brand">Angular Services</a>
+</nav>
+
+
+<h2 class="mt-4 text-center font-weight-bold">Services</h2>
+<div class="small">
+  <p class="text-center">to share the business logic, data, functions, utility can be shared with multiple components. main use is reduce duplication code.</p>
+  <p class="text-center">Customer-Service is a class of .ts file this contains set of methods that will maintain actual data business logic
+    that will be shared with all.</p>
+  <p class="text-center">If you want some data. you nedd to call method of the service</p>
+  <p class="text-center">In order to call method of service you have to crete object of customer service</p>
+</div>
+<hr>
+<h4 class="mt-4 text-center font-weight-bold">Dependency LookUp</h4>
+<p class="text-center small">Customer-list is dependent on customer-service it provide some data then only customer-list will display</p>
+<hr>
+<h4 class="mt-4 text-center font-weight-bold">Dependency Injunction - Design Pattern in Angular</h4>
+<p class="small text-center">If you are customer-list is dependent on customer-service. You just need to inform to Angular. If you declare
+customer-service as a dependency. Angular create itself an object of this service inject to customer-list</p>
+<p class="h2 text-center">Main Example</p>
+<app-customer-details></app-customer-details>
+<app-customer-list></app-customer-list>
+<router-outlet></router-outlet>
+
