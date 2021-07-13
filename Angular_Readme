@@ -1,0 +1,258 @@
+When you create project dont give _ to the project name give - and also give camelCase when you have two words
+.ts file control  .html file
+
+bootstrap + MDBootstrap
+font-Awesome
+.css
+    -> fontawesome.css
+    -> bootstrap.css
+    -> mdb.css
+    -> style.css
+.js
+    -> jquery.js
+    -> popper.js
+    -> bootstrap.js
+    -> mdb.js
+- mdb is used for extra richness to the webs
+
+in index.html we add fontawesome link and, as well as we add bootstrap folder in src
+in angular.json we set the links css js
+
+databinding in 5 ways
+
+interpolation / angular expresson -> {{}} - inner text will change
+Property binding -> [] this is from .ts to .html
+Event Binding -> () this is from .html to .ts. just like a regular js
+Template reference variable -> id = a in css, in angular #a
+Two way data binding -> [()]
+
+.ts to .html -> property binding or interpolation - []
+.htm to .ts -> event binding - ()
+
+we cant aceess js global elements
+only way to get that elements through function
+date, object, String, Number, JSON
+
+
+setInterval() - to start the timeout
+clearInterval() - to stop the timeout
+
+clearInterval - it requires id of setInterval
+id = setInterval()
+clearInterval(id)
+
+
+if you want to change data binding automatically
+we want
+    - you need to import forms module: FormsModule
+    - ngModel : this is perform 2 way data binding to the form fields
+    - name parameter must important
+    - We have directives. if you want any changes on dom
+           *ngIf
+           *ngFor
+           *ngSwitch
+
+Component interaction
+    - @Input() : from parent to child
+    - @Output() : from child to parent
+
+How you can send data
+    [childData] = "parentData"
+    (parentData) = "msg=$event"
+
+Now we are using ngModel for 2 way binding
+
+Agular Services -:
+    to share the business logic, data, functions, utility can be shared with multiple components.
+    main use is reduce duplication code.
+
+you have to create a service
+    ng g s <service name>
+declare as a provider in app.module.ts
+    providers: [CustomerService]
+declare dependency on service with components (inside the constructor).
+Constructor is a special method which will executed whenever component is created
+     constructor(private customerService:CustomerService) { }
+     ngOnInit(): void {
+         this.customerDetails = this.customerService.getDataFromService();
+       }
+
+HTTP Calls
+    HttpClients Module
+
+Observables - it is a sequence of items.that arrives asynchronus over the data, which called raw data.
+in angula, observable mean a http response which arise from server to our app asynchronously
+once we recieve the observables, we need to type cast them into the required format as per the incoming responce
+once we recive the data, which will be available to our components which are subscribed to our service
+we can make calls using httpClient module from angular
+steps to fetch the data from a server using httpClient
+
+which type of data come from the server is observable public getAllCustomers():Observable<any[]>
+
+you nedd to subsribe then only you get data
+
+pipe is do asynchronus calls to the url
+
+1. host json file -> github.com/gist
+2. fetch the data from server
+    - httpclientmodule has to be declare in app.module.ts
+    - create a service and fetch data using httpclient
+    - fetch the data get req
+3. provide data to the components
+    - whatever the component subscribed to the service taht will get data
+4. display data on components screen
+
+
+For handle errors you have to create a function
+
+
+
+github search api
+    hhtp://api.github.com/user/bypavannpk
+we have to register
+    open github goto settings - developer options - auth -and you have register there
+
+Client ID
+28d4c9d704b441994055
+
+Client secrets
+af3ff6001fe8cd726a2c9e03b190b2026b7edbbc
+
+
+Spinner - ngxspinner
+
+
+routing
+        //for id
+          constructor(private activatedRoute: ActivatedRoute, private employeeService: EmployeesService) { }
+        ngOnInit(): void {
+    //for getting the id
+    this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
+      this.employeeID = Number(param.get('id'));
+    });
+    this.employeeService.getAllEmployees().subscribe((data) => {
+          // @ts-ignore
+          this.selectedEmployee = data.find((employee) => {
+            return employee.id === this.employeeID;
+          })
+        }, (err) => {
+          this.errmsg = err;
+        })
+
+
+modules
+        lazy loading
+            ng g module employees --route employees --module app.module
+            ng g module stocks --route stocks --module app.module
+
+//employee-list routing
+go to the specific module folder
+      components/employees/employees -:
+                ng g c employee-list --module employees.module or ng g c employee-list
+                ng g c employee-details --module employees.module or ng g c employee-details
+                ng g c stock-list --module stocks.module or ng g c stock-list
+                ng g c stock-details --module stocks.module or ng g c stock-details
+
+
+Template Driven Forms
+        - Huge code in Template, Less code .TS
+        - Simple Validations
+        - Hard to test
+        - Forms Module
+
+Reactive Forms
+        - Huge code in .TS, Less code Template
+        - Complex Validations
+        - Easy to test
+        - Reactive Forms module
+
+
+        Components
+            - Nav
+            - Home
+            - Enroll (TDF)
+            - Register (RF)
+
+        Services
+                We want to send the data to server
+                - user.service
+        Server
+                - UserRouter
+
+
+
+        Fetch the image file
+
+            public async onChangeImage(event: any){
+                const file = event.dataTransfer ? event.dataTransfer.files[0] : event.target.files[0];
+
+                const pattern = /image-*/;
+                const reader = new FileReader();
+                if (!file.type.match(pattern)){
+                  alert('invalid format');
+                  return;
+                }
+
+                // it has to wait for the conversion
+                const imageData: any = await this.convertImageBase64(file);
+                this.addProduct.image = String(imageData);
+              }
+
+              // tslint:disable-next-line:typedef
+              public convertImageBase64(imgFile: any){
+                console.log(this.addProduct.image);
+                return new Promise((resolve, reject) => {
+                  const reader = new FileReader();
+                  reader.readAsDataURL(imgFile);
+                  // tslint:disable-next-line:typedef
+                  reader.addEventListener('load', function() {
+                    if (this.result){
+                      resolve(this.result);
+                    }
+                    else {
+                      reject('Error Occured');
+                    }
+                  });
+                });
+              }
+
+if you want to send data to server you must have service
+        you have httpclientmodule
+
+
+If you submit the form its redirect another page, you must have router module
+inject in constructor
+
+this.router.navigate(['/<path>'])
+
+
+navigate for samepage in delete
+public deleteProductItem() {
+    this.productService.deleteProduct(this.productID).subscribe((data) => {
+      this.router.navigateByUrl('/products', {skipLocationChange: true}).then(() => {
+        this.router.navigate(['/products/list-products']).then(r => {});
+      });
+    });
+  }
+
+
+Craete Guards
+for give the access who logged in
+
+ng g guard auth
+
+
+create iterceptor
+for check the token from server side
+
+ ng g interceptor auth
+
+we have to configure in root module
+providers: [{
+    provide : HTTP_INTERCEPTORS,
+    useClass : AuthInterceptor,
+    multi : true
+  }],
+
+
+  if you want to verify anything coming from server. you must have middleware
